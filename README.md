@@ -75,7 +75,7 @@ Tutti i risultati sono salvati in `results/eda/`:
 
 ## Autore
 
-Angelo Paldino — Università della calabria Unical, facoltà ingegneria informatica indirizzointelligenza artificiale e machine learning, corso di Data Mining
+Angelo Paldino — Università della calabria Unical, facoltà ingegneria informatica indirizzo intelligenza artificiale e machine learning, corso di Data Mining
 
 ---
 
