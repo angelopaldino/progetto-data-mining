@@ -1,0 +1,7 @@
+Accuracy: 0.6987
+Precision: 0.7865
+Recall: 0.7756
+F1-Score: 0.7810
+Confusion Matrix:
+[[ 84  76] -> Classe 0 non selfmade: 84 corretti, 76 falsi positivi
+ [ 81 280]] -> Classe 1 self made: 280 corretti, 81 falsi negativi

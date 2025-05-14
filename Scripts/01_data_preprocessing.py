@@ -8,7 +8,7 @@ def main():
     # 1. Definisci i percorsi
     raw_path = os.path.join("data", "raw", "Billionaires Statistics Dataset.csv")
     processed_dir = os.path.join("data", "processed")
-    processed_path = os.path.join(processed_dir, "billionaires_clean.csv")
+    processed_path = os.path.join(processed_dir, "billionaires_clean_numeric.csv")
 
     # 2. Crea la cartella processed se non esiste
     os.makedirs(processed_dir, exist_ok=True)
@@ -48,7 +48,7 @@ def main():
         after = df.shape[0]
         print(f"🧹 Rimosse righe senza {required}: {before - after} righe in meno")
 
-    # 7. Trasforma colonne, rimuovi il sufix “ B” in NetWorth e converti in float
+    # 7a. Trasforma colonne, rimuovi il sufix “ B” in NetWorth e converti in float
     if "finalWorth" in df.columns and df["finalWorth"].dtype == object:
         # es. “12.3 B” → 12.3
         df["finalWorth"] = (
@@ -57,6 +57,14 @@ def main():
             .astype(float)
         )
         print("🔄 finalWorth convertito da stringa a float")
+
+    # 7b. Pulizia simboli da altre colonne numeriche scritte come stringhe
+    for col in df.select_dtypes(include='object').columns:
+        if df[col].astype(str).str.contains(r'[\\$,]', na=False).any():
+            print(f"🔍 Pulizia colonna {col} da simboli $, ,")
+            df[col] = df[col].replace('[\\$,]', '', regex=True).replace(',', '', regex=True)
+            df[col] = pd.to_numeric(df[col], errors='coerce') 
+
 
     # 8. Salva il DataFrame pulito
     df.to_csv(processed_path, index=False)
