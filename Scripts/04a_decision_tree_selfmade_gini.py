@@ -10,8 +10,8 @@ X_train_path = "data/splitted/X_train.csv"
 X_test_path = "data/splitted/X_test.csv"
 y_train_path = "data/splitted/y_train.csv"
 y_test_path = "data/splitted/y_test.csv"
-results_dir = "results/classification_selfMade"
-model_path = "models/decision_tree_selfmade.joblib"
+results_dir = "results/classification_selfMade/decision_tree/gini"
+model_path = "models/decision_tree_selfmade_gini.joblib"
 os.makedirs(results_dir, exist_ok=True)
 os.makedirs("models", exist_ok=True)
 
@@ -34,7 +34,7 @@ f1 = f1_score(y_test, y_pred)
 cm = confusion_matrix(y_test, y_pred)
 
 # Salvataggio metriche
-with open(os.path.join(results_dir, "metrics.txt"), "w") as f:
+with open(os.path.join(results_dir, "metrics_gini.txt"), "w") as f:
     f.write(f"Accuracy: {accuracy:.4f}\n")
     f.write(f"Precision: {precision:.4f}\n")
     f.write(f"Recall: {recall:.4f}\n")
@@ -45,7 +45,7 @@ with open(os.path.join(results_dir, "metrics.txt"), "w") as f:
 # Visualizzazione e salvataggio dell'albero
 plt.figure(figsize=(20, 10))
 plot_tree(model, filled=True, max_depth=3, feature_names=X_train.columns, class_names=["False", "True"])
-plt.savefig(os.path.join(results_dir, "decision_tree_preview.png"))
+plt.savefig(os.path.join(results_dir, "decision_tree_preview_gini.png"))
 plt.close()
 
 # Salvataggio del modello addestrato
