@@ -1,4 +1,4 @@
-Migliori parametri trovati (in base a f1): {'criterion': 'entropy', 'max_depth': 9}
+Best params: {'criterion': 'entropy', 'max_depth': 9}
 
 Accuracy: 0.7274
 Precision: 0.7494
@@ -6,14 +6,6 @@ Recall: 0.9114
 F1-Score: 0.8225
 
 Classification Report:
-              precision    recall  f1-score   support
-
-       False       0.61      0.31      0.41       160
-        True       0.75      0.91      0.82       361
-
-    accuracy                           0.73       521
-   macro avg       0.68      0.61      0.62       521
-weighted avg       0.71      0.73      0.70       521
 
 Confusion Matrix:
 [[ 50 110]
