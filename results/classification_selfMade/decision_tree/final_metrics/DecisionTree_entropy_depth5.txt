@@ -1,0 +1,21 @@
+Modello: DecisionTree
+Criterion: entropy
+Max Depth: 5
+
+TRAIN METRICS:
+Accuracy: 0.7309
+Precision: 0.7563
+Recall: 0.9022
+F1-Score: 0.8228
+Confusion Matrix:
+[[ 221  419]
+ [ 141 1300]]
+
+TEST METRICS:
+Accuracy: 0.7274
+Precision: 0.7589
+Recall: 0.8892
+F1-Score: 0.8189
+Confusion Matrix:
+[[ 58 102]
+ [ 40 321]]

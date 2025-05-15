@@ -1,0 +1,21 @@
+Modello: DecisionTree
+Criterion: gini
+Max Depth: 6
+
+TRAIN METRICS:
+Accuracy: 0.7655
+Precision: 0.8010
+Recall: 0.8799
+F1-Score: 0.8386
+Confusion Matrix:
+[[ 325  315]
+ [ 173 1268]]
+
+TEST METRICS:
+Accuracy: 0.7255
+Precision: 0.7795
+Recall: 0.8421
+F1-Score: 0.8096
+Confusion Matrix:
+[[ 74  86]
+ [ 57 304]]
