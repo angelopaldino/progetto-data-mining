@@ -1,0 +1,15 @@
+Modello: DecisionTreeClassifier
+Criterion: entropy
+Max Depth: 6
+
+TRAIN METRICS:
+accuracy: 0.7477
+precision: 0.7756
+recall: 0.8945
+f1: 0.8308
+
+TEST METRICS:
+accuracy: 0.7486
+precision: 0.7847
+recall: 0.8781
+f1: 0.8288
