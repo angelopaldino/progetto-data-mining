@@ -1,23 +1,23 @@
 Modello: RIPPER (Rule-Based) con livello di pruning 2
 
 TRAIN METRICS:
-Accuracy: 0.6016
-Precision: 0.9752
-Recall: 0.4358
-F1-Score: 0.6024
+Accuracy: 0.5949
+Precision: 0.9657
+Recall: 0.4303
+F1-Score: 0.5953
 Confusion Matrix:
-[[624  16]
- [813 628]]
+[[618  22]
+ [821 620]]
 
 
 TEST METRICS:
-Accuracy: 0.5873
-Precision: 0.9345
-Recall: 0.4349
-F1-Score: 0.5936
+Accuracy: 0.5816
+Precision: 0.9387
+Recall: 0.4238
+F1-Score: 0.5840
 Confusion Matrix:
-[[149  11]
- [204 157]]
+[[150  10]
+ [208 153]]
 
 REGOLE APPRESE:
-[[country_China=True^category_Manufacturing=True] V [country_China=True^category_Metals&Mining=False^category_Healthcare=False^category_Finance&Investments=False^category_Diversified=False] V [category_Technology=True^country_Germany=False^country_SouthKorea=False] V [cpi_country=>180.44^gdp_country=1393254877905.0-2029000000000.0] V [category_Food&Beverage=False^category_Diversified=False^country_Germany=False^gdp_country=2827113184696.0-19910000000000.0^category_Metals&Mining=False^category_Gambling&Casinos=False]]
+[[country_China=True^category_Metals&Mining=False^category_Diversified=False^finalWorth=<1200.0] V [country_China=True^category_Diversified=False^category_Manufacturing=True] V [country_China=True^category_Metals&Mining=False^category_Diversified=False^category_Finance&Investments=False^category_RealEstate=False^category_Technology=False^category_Healthcare=False] V [category_Technology=True^cpi_country=115.16-117.24^age=<49.0] V [category_Technology=True] V [cpi_country=119.8-125.08^gdp_country=2827113184696.0-19910000000000.0^category_Metals&Mining=False^category_Diversified=False] V [total_tax_rate_country=38.7-47.4^gross_tertiary_education_enrollment=67.8-81.9]]

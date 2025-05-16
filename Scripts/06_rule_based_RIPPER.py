@@ -1,5 +1,6 @@
 import pandas as pd
 import wittgenstein as lw
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, precision_score, recall_score, f1_score,confusion_matrix
 
@@ -7,6 +8,8 @@ X_train = pd.read_csv("data/splitted/X_train.csv")
 X_test = pd.read_csv("data/splitted/X_test.csv")
 y_train = pd.read_csv("data/splitted/y_train.csv").values.ravel()
 y_test = pd.read_csv("data/splitted/y_test.csv").values.ravel()
+model_path = "models/rule_based_ripper_final.joblib"
+
 
 k=2
 model = lw.RIPPER(k=k)
@@ -63,3 +66,5 @@ with open(filename, "w") as f:
     f.write(str(model.ruleset_))
 
 print(f"✔ Metriche salvate in: {filename}")
+joblib.dump(model, model_path)
+print(f"\n✅ Modello salvato in: {model_path}")

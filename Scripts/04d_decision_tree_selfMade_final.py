@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.tree import plot_tree
 from sklearn.metrics import confusion_matrix
+import joblib
 
 
 
@@ -12,6 +13,8 @@ X_train = pd.read_csv("data/splitted/X_train.csv")
 X_test = pd.read_csv("data/splitted/X_test.csv")
 y_train = pd.read_csv("data/splitted/y_train.csv").values.ravel()
 y_test = pd.read_csv("data/splitted/y_test.csv").values.ravel()
+model_path = "models/decision_tree_selfmade_final.joblib"
+os.makedirs("models", exist_ok=True)
 
 
 
@@ -101,6 +104,8 @@ test_metrics = {
 # Matrici di confusione
 train_cm = confusion_matrix(y_train, y_pred_train)
 test_cm = confusion_matrix(y_test, y_pred)
+joblib.dump(model, model_path)
+print(f"\n✅ Modello salvato in: {model_path}")
 
 save_metrics_to_file("DecisionTree", "entropy", 6, train_metrics, test_metrics, train_cm, test_cm)
 
