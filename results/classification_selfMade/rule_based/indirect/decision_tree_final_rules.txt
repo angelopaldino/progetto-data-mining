@@ -1,0 +1,88 @@
+Modello: DecisionTreeClassifier (entropy, depth=6)
+
+TRAIN METRICS:
+Accuracy: 0.7477
+Precision: 0.7756
+Recall: 0.8945
+F1-Score: 0.8308
+
+TEST METRICS:
+Accuracy: 0.7486
+Precision: 0.7847
+Recall: 0.8781
+F1-Score: 0.8288
+
+REGOLE ESTRATTE:
+|--- population_country <= 1382066368.00
+|   |--- industries_Technology <= 0.50
+|   |   |--- country_Russia <= 0.50
+|   |   |   |--- total_tax_rate_country <= 48.10
+|   |   |   |   |--- industries_Finance & Investments <= 0.50
+|   |   |   |   |   |--- age <= 47.50
+|   |   |   |   |   |   |--- class: False
+|   |   |   |   |   |--- age >  47.50
+|   |   |   |   |   |   |--- class: True
+|   |   |   |   |--- industries_Finance & Investments >  0.50
+|   |   |   |   |   |--- country_Taiwan <= 0.50
+|   |   |   |   |   |   |--- class: True
+|   |   |   |   |   |--- country_Taiwan >  0.50
+|   |   |   |   |   |   |--- class: False
+|   |   |   |--- total_tax_rate_country >  48.10
+|   |   |   |   |--- age <= 40.50
+|   |   |   |   |   |--- class: False
+|   |   |   |   |--- age >  40.50
+|   |   |   |   |   |--- age <= 59.50
+|   |   |   |   |   |   |--- class: False
+|   |   |   |   |   |--- age >  59.50
+|   |   |   |   |   |   |--- class: False
+|   |   |--- country_Russia >  0.50
+|   |   |   |--- class: True
+|   |--- industries_Technology >  0.50
+|   |   |--- cpi_country <= 115.54
+|   |   |   |--- gdp_country <= 616957689856.00
+|   |   |   |   |--- class: True
+|   |   |   |--- gdp_country >  616957689856.00
+|   |   |   |   |--- age <= 69.50
+|   |   |   |   |   |--- age <= 47.50
+|   |   |   |   |   |   |--- class: True
+|   |   |   |   |   |--- age >  47.50
+|   |   |   |   |   |   |--- class: False
+|   |   |   |   |--- age >  69.50
+|   |   |   |   |   |--- class: True
+|   |   |--- cpi_country >  115.54
+|   |   |   |--- finalWorth <= 4850.00
+|   |   |   |   |--- class: True
+|   |   |   |--- finalWorth >  4850.00
+|   |   |   |   |--- life_expectancy_country <= 72.95
+|   |   |   |   |   |--- class: False
+|   |   |   |   |--- life_expectancy_country >  72.95
+|   |   |   |   |   |--- finalWorth <= 5000.00
+|   |   |   |   |   |   |--- class: False
+|   |   |   |   |   |--- finalWorth >  5000.00
+|   |   |   |   |   |   |--- class: True
+|--- population_country >  1382066368.00
+|   |--- age <= 35.50
+|   |   |--- class: False
+|   |--- age >  35.50
+|   |   |--- industries_Metals & Mining <= 0.50
+|   |   |   |--- finalWorth <= 1350.00
+|   |   |   |   |--- class: True
+|   |   |   |--- finalWorth >  1350.00
+|   |   |   |   |--- finalWorth <= 6050.00
+|   |   |   |   |   |--- finalWorth <= 5750.00
+|   |   |   |   |   |   |--- class: True
+|   |   |   |   |   |--- finalWorth >  5750.00
+|   |   |   |   |   |   |--- class: False
+|   |   |   |   |--- finalWorth >  6050.00
+|   |   |   |   |   |--- class: True
+|   |   |--- industries_Metals & Mining >  0.50
+|   |   |   |--- age <= 43.50
+|   |   |   |   |--- class: False
+|   |   |   |--- age >  43.50
+|   |   |   |   |--- age <= 76.00
+|   |   |   |   |   |--- class: True
+|   |   |   |   |--- age >  76.00
+|   |   |   |   |   |--- finalWorth <= 5450.00
+|   |   |   |   |   |   |--- class: True
+|   |   |   |   |   |--- finalWorth >  5450.00
+|   |   |   |   |   |   |--- class: False
