@@ -18,7 +18,7 @@ os.makedirs("models", exist_ok=True)
 
 
 
-model = DecisionTreeClassifier(criterion='entropy', max_depth=6, random_state=42)
+model = DecisionTreeClassifier(criterion='entropy', max_depth=5, random_state=42)
 
 model.fit(X_train, y_train)
 
@@ -107,5 +107,5 @@ test_cm = confusion_matrix(y_test, y_pred)
 joblib.dump(model, model_path)
 print(f"\n✅ Modello salvato in: {model_path}")
 
-save_metrics_to_file("DecisionTree", "entropy", 6, train_metrics, test_metrics, train_cm, test_cm)
+save_metrics_to_file("DecisionTree", "entropy", 5, train_metrics, test_metrics, train_cm, test_cm)
 

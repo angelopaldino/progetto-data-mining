@@ -1,23 +1,23 @@
 Modello: RIPPER (Rule-Based) con livello di pruning 2
 
 TRAIN METRICS:
-Accuracy: 0.6002
-Precision: 0.9692
-Recall: 0.4365
-F1-Score: 0.6019
+Accuracy: 0.5815
+Precision: 0.9782
+Recall: 0.4046
+F1-Score: 0.5724
 Confusion Matrix:
-[[620  20]
- [812 629]]
+[[627  13]
+ [858 583]]
 
 
 TEST METRICS:
-Accuracy: 0.5931
-Precision: 0.9515
-Recall: 0.4349
-F1-Score: 0.5970
+Accuracy: 0.5835
+Precision: 0.9615
+Recall: 0.4155
+F1-Score: 0.5803
 Confusion Matrix:
-[[152   8]
- [204 157]]
+[[154   6]
+ [211 150]]
 
 REGOLE APPRESE:
-[[population_country=>1366417754.0] V [population_country=83429615.0-328239523.0^category_Technology=True] V [population_country=83429615.0-328239523.0^category_Food&Beverage=False^gross_tertiary_education_enrollment=65.6-81.9] V [category_Diversified=False^country_Germany=False^category_Food&Beverage=False^category_Fashion&Retail=False^category_Technology=True^country_SouthKorea=False]]
+[[population_country=>1366417754.0^category_Manufacturing=True] V [population_country=>1366417754.0^category_Metals&Mining=False^category_Healthcare=False^category_Diversified=False] V [population_country=83429615.0-328239523.0^category_Technology=True^age=<49.0] V [population_country=83429615.0-328239523.0^gross_tertiary_education_enrollment=65.6-81.9] V [cpi_country=115.91-117.24^category_Technology=True] V [population_country=>1366417754.0^category_Metals&Mining=False]]
