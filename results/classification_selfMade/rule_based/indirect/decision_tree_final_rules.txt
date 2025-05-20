@@ -1,16 +1,16 @@
-Modello: DecisionTreeClassifier (entropy, depth=6)
+Modello: DecisionTreeClassifier (entropy, depth=5)
 
 TRAIN METRICS:
-Accuracy: 0.7434
-Precision: 0.7704
-Recall: 0.8966
-F1-Score: 0.8287
+Accuracy: 0.7314
+Precision: 0.7351
+Recall: 0.9570
+F1-Score: 0.8315
 
 TEST METRICS:
-Accuracy: 0.7486
-Precision: 0.7833
-Recall: 0.8809
-F1-Score: 0.8292
+Accuracy: 0.7198
+Precision: 0.7282
+Recall: 0.9501
+F1-Score: 0.8245
 
 REGOLE ESTRATTE:
 |--- population_country <= 1382066368.00
@@ -18,23 +18,14 @@ REGOLE ESTRATTE:
 |   |   |--- country_Russia <= 0.50
 |   |   |   |--- total_tax_rate_country <= 48.10
 |   |   |   |   |--- industries_Finance & Investments <= 0.50
-|   |   |   |   |   |--- age <= 47.50
-|   |   |   |   |   |   |--- class: False
-|   |   |   |   |   |--- age >  47.50
-|   |   |   |   |   |   |--- class: True
+|   |   |   |   |   |--- class: True
 |   |   |   |   |--- industries_Finance & Investments >  0.50
-|   |   |   |   |   |--- country_Taiwan <= 0.50
-|   |   |   |   |   |   |--- class: True
-|   |   |   |   |   |--- country_Taiwan >  0.50
-|   |   |   |   |   |   |--- class: False
+|   |   |   |   |   |--- class: True
 |   |   |   |--- total_tax_rate_country >  48.10
-|   |   |   |   |--- age <= 40.50
+|   |   |   |   |--- age <= 68.50
 |   |   |   |   |   |--- class: False
-|   |   |   |   |--- age >  40.50
-|   |   |   |   |   |--- age <= 59.50
-|   |   |   |   |   |   |--- class: False
-|   |   |   |   |   |--- age >  59.50
-|   |   |   |   |   |   |--- class: False
+|   |   |   |   |--- age >  68.50
+|   |   |   |   |   |--- class: True
 |   |   |--- country_Russia >  0.50
 |   |   |   |--- class: True
 |   |--- industries_Technology >  0.50
@@ -43,23 +34,17 @@ REGOLE ESTRATTE:
 |   |   |   |   |--- class: True
 |   |   |   |--- gdp_country >  616957689856.00
 |   |   |   |   |--- age <= 69.50
-|   |   |   |   |   |--- age <= 47.50
-|   |   |   |   |   |   |--- class: True
-|   |   |   |   |   |--- age >  47.50
-|   |   |   |   |   |   |--- class: False
+|   |   |   |   |   |--- class: False
 |   |   |   |   |--- age >  69.50
 |   |   |   |   |   |--- class: True
 |   |   |--- cpi_country >  115.54
 |   |   |   |--- finalWorth <= 4850.00
 |   |   |   |   |--- class: True
 |   |   |   |--- finalWorth >  4850.00
-|   |   |   |   |--- life_expectancy_country <= 72.95
+|   |   |   |   |--- gross_tertiary_education_enrollment <= 46.85
 |   |   |   |   |   |--- class: False
-|   |   |   |   |--- life_expectancy_country >  72.95
-|   |   |   |   |   |--- finalWorth <= 5000.00
-|   |   |   |   |   |   |--- class: False
-|   |   |   |   |   |--- finalWorth >  5000.00
-|   |   |   |   |   |   |--- class: True
+|   |   |   |   |--- gross_tertiary_education_enrollment >  46.85
+|   |   |   |   |   |--- class: True
 |--- population_country >  1382066368.00
 |   |--- age <= 35.50
 |   |   |--- class: False
@@ -69,20 +54,14 @@ REGOLE ESTRATTE:
 |   |   |   |   |--- class: True
 |   |   |   |--- finalWorth >  1350.00
 |   |   |   |   |--- finalWorth <= 6050.00
-|   |   |   |   |   |--- finalWorth <= 5750.00
-|   |   |   |   |   |   |--- class: True
-|   |   |   |   |   |--- finalWorth >  5750.00
-|   |   |   |   |   |   |--- class: False
+|   |   |   |   |   |--- class: True
 |   |   |   |   |--- finalWorth >  6050.00
 |   |   |   |   |   |--- class: True
 |   |   |--- industries_Metals & Mining >  0.50
-|   |   |   |--- age <= 43.50
+|   |   |   |--- finalWorth <= 1200.00
 |   |   |   |   |--- class: False
-|   |   |   |--- age >  43.50
-|   |   |   |   |--- age <= 76.00
+|   |   |   |--- finalWorth >  1200.00
+|   |   |   |   |--- age <= 63.50
 |   |   |   |   |   |--- class: True
-|   |   |   |   |--- age >  76.00
-|   |   |   |   |   |--- finalWorth <= 5450.00
-|   |   |   |   |   |   |--- class: True
-|   |   |   |   |   |--- finalWorth >  5450.00
-|   |   |   |   |   |   |--- class: False
+|   |   |   |   |--- age >  63.50
+|   |   |   |   |   |--- class: False

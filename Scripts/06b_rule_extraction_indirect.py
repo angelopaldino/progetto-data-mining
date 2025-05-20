@@ -39,7 +39,7 @@ os.makedirs(output_dir, exist_ok=True)
 
 filename = os.path.join(output_dir, f"decision_tree_final_rules.txt")
 with open(filename, "w") as f:
-    f.write(f"Modello: DecisionTreeClassifier (entropy, depth={6})\n\n")
+    f.write(f"Modello: DecisionTreeClassifier (entropy, depth={5})\n\n")
     f.write("TRAIN METRICS:\n")
     for k, v in train_metrics.items():
         f.write(f"{k}: {v:.4f}\n")
