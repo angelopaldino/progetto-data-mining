@@ -1,12 +1,12 @@
 Migliori parametri trovati (in base a accuracy): {'criterion': 'entropy', 'max_depth': 9}
 
-Accuracy: 0.7274
-Precision: 0.7494
-Recall: 0.9114
-F1-Score: 0.8225
+Accuracy: 0.7198
+Precision: 0.7708
+Recall: 0.8476
+F1-Score: 0.8074
 
 Classification Report:
 
 Confusion Matrix:
-[[ 50 110]
- [ 32 329]]
+[[ 69  91]
+ [ 55 306]]

@@ -1,23 +1,23 @@
 Modello: RIPPER (Rule-Based) con livello di pruning 2
 
 TRAIN METRICS:
-Accuracy: 0.5949
-Precision: 0.9657
-Recall: 0.4303
-F1-Score: 0.5953
+Accuracy: 0.6002
+Precision: 0.9692
+Recall: 0.4365
+F1-Score: 0.6019
 Confusion Matrix:
-[[618  22]
- [821 620]]
+[[620  20]
+ [812 629]]
 
 
 TEST METRICS:
-Accuracy: 0.5816
-Precision: 0.9387
-Recall: 0.4238
-F1-Score: 0.5840
+Accuracy: 0.5931
+Precision: 0.9515
+Recall: 0.4349
+F1-Score: 0.5970
 Confusion Matrix:
-[[150  10]
- [208 153]]
+[[152   8]
+ [204 157]]
 
 REGOLE APPRESE:
-[[country_China=True^category_Metals&Mining=False^category_Diversified=False^finalWorth=<1200.0] V [country_China=True^category_Diversified=False^category_Manufacturing=True] V [country_China=True^category_Metals&Mining=False^category_Diversified=False^category_Finance&Investments=False^category_RealEstate=False^category_Technology=False^category_Healthcare=False] V [category_Technology=True^cpi_country=115.16-117.24^age=<49.0] V [category_Technology=True] V [cpi_country=119.8-125.08^gdp_country=2827113184696.0-19910000000000.0^category_Metals&Mining=False^category_Diversified=False] V [total_tax_rate_country=38.7-47.4^gross_tertiary_education_enrollment=67.8-81.9]]
+[[population_country=>1366417754.0] V [population_country=83429615.0-328239523.0^category_Technology=True] V [population_country=83429615.0-328239523.0^category_Food&Beverage=False^gross_tertiary_education_enrollment=65.6-81.9] V [category_Diversified=False^country_Germany=False^category_Food&Beverage=False^category_Fashion&Retail=False^category_Technology=True^country_SouthKorea=False]]
