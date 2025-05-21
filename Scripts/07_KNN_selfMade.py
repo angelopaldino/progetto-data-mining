@@ -6,14 +6,10 @@ from sklearn.preprocessing import StandardScaler
 import os
 
 # Caricamento dati
-X_train = pd.read_csv("../data/splitted/X_train.csv")
-X_test = pd.read_csv("../data/splitted/X_test.csv")
-y_train = pd.read_csv("../data/splitted/y_train.csv").values.ravel()
-y_test = pd.read_csv("../data/splitted/y_test.csv").values.ravel()
-
-#print(X_train.nunique())
-#print(X_train.isna().sum())
-#print(np.isinf(X_train).sum())
+X_train = pd.read_csv("data/splitted/X_train.csv")
+X_test = pd.read_csv("data/splitted/X_test.csv")
+y_train = pd.read_csv("data/splitted/y_train.csv").values.ravel()
+y_test = pd.read_csv("data/splitted/y_test.csv").values.ravel()
 
 
 print("Colonne con solo NaN:")
