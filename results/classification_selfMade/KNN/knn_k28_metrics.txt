@@ -1,17 +1,17 @@
 Modello: KNeighborsClassifier (k=28)
 
 TRAIN METRICS:
-Accuracy: 0.7501
-Precision: 0.7876
-Recall: 0.8751
-F1-Score: 0.8291
+Accuracy: 0.7441
+Precision: 0.7845
+Recall: 0.8692
+F1-Score: 0.8247
 Confusion Matrix:
-[[300, 340], [180, 1261]]
+[[259, 301], [165, 1096]]
 
 TEST METRICS:
-Accuracy: 0.7140
-Precision: 0.7677
-Recall: 0.8421
-F1-Score: 0.8032
+Accuracy: 0.7170
+Precision: 0.7606
+Recall: 0.8632
+F1-Score: 0.8087
 Confusion Matrix:
-[[68, 92], [57, 304]]
+[[93, 147], [74, 467]]
