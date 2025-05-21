@@ -1,23 +1,23 @@
 Modello: RIPPER (Rule-Based) con livello di pruning 2
 
 TRAIN METRICS:
-Accuracy: 0.6063
-Precision: 0.9626
-Recall: 0.4489
-F1-Score: 0.6122
+Accuracy: 0.6002
+Precision: 0.9734
+Recall: 0.4346
+F1-Score: 0.6009
 Confusion Matrix:
-[[538  22]
- [695 566]]
+[[545  15]
+ [713 548]]
 
 
 TEST METRICS:
-Accuracy: 0.5941
-Precision: 0.9375
-Recall: 0.4436
-F1-Score: 0.6023
+Accuracy: 0.5915
+Precision: 0.9625
+Recall: 0.4270
+F1-Score: 0.5915
 Confusion Matrix:
-[[224  16]
- [301 240]]
+[[231   9]
+ [310 231]]
 
 REGOLE APPRESE:
-[[log_gdp_country=>30.62^cpi_country=119.8-125.08^age=55.0-58.0] V [country_China=True] V [category_Technology=True^age=<50.0] V [category_Technology=True^country_SouthKorea=False] V [cpi_country=>180.44^life_expectancy_country=<72.7]]
+[[country_China=True^category_Metals&Mining=False] V [category_Technology=True^cpi_country=115.16-117.24] V [total_tax_rate_country=37.9-47.4^life_expectancy_country=<72.7^log_gdp_country=27.96-28.34] V [category_Technology=True^country_SouthKorea=False^country_Germany=False]]

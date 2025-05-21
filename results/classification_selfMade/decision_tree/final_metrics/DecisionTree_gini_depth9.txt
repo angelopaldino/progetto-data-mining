@@ -3,19 +3,19 @@ Criterion: gini
 Max Depth: 9
 
 TRAIN METRICS:
-Accuracy: 0.7977
-Precision: 0.7904
-Recall: 0.9632
-F1-Score: 0.8683
+Accuracy: 0.7963
+Precision: 0.8031
+Recall: 0.9350
+F1-Score: 0.8641
 Confusion Matrix:
-[[ 272  368]
- [  53 1388]]
+[[ 271  289]
+ [  82 1179]]
 
 TEST METRICS:
-Accuracy: 0.7217
-Precision: 0.7455
-Recall: 0.9086
-F1-Score: 0.8190
+Accuracy: 0.7311
+Precision: 0.7657
+Recall: 0.8817
+F1-Score: 0.8196
 Confusion Matrix:
-[[ 48 112]
- [ 33 328]]
+[[ 94 146]
+ [ 64 477]]

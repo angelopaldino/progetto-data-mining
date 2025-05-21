@@ -1,20 +1,20 @@
 Modello: DecisionTreeClassifier (entropy, depth=5)
 
 TRAIN METRICS:
-Accuracy: 0.7314
-Precision: 0.7351
-Recall: 0.9570
-F1-Score: 0.8315
+Accuracy: 0.7331
+Precision: 0.7578
+Recall: 0.9033
+F1-Score: 0.8242
 
 TEST METRICS:
-Accuracy: 0.7198
-Precision: 0.7282
-Recall: 0.9501
-F1-Score: 0.8245
+Accuracy: 0.7222
+Precision: 0.7547
+Recall: 0.8872
+F1-Score: 0.8156
 
 REGOLE ESTRATTE:
 |--- population_country <= 1382066368.00
-|   |--- industries_Technology <= 0.50
+|   |--- category_Technology <= 0.50
 |   |   |--- country_Russia <= 0.50
 |   |   |   |--- total_tax_rate_country <= 48.10
 |   |   |   |   |--- industries_Finance & Investments <= 0.50
@@ -22,46 +22,52 @@ REGOLE ESTRATTE:
 |   |   |   |   |--- industries_Finance & Investments >  0.50
 |   |   |   |   |   |--- class: True
 |   |   |   |--- total_tax_rate_country >  48.10
-|   |   |   |   |--- age <= 68.50
+|   |   |   |   |--- age <= 40.50
 |   |   |   |   |   |--- class: False
-|   |   |   |   |--- age >  68.50
-|   |   |   |   |   |--- class: True
+|   |   |   |   |--- age >  40.50
+|   |   |   |   |   |--- class: False
 |   |   |--- country_Russia >  0.50
 |   |   |   |--- class: True
-|   |--- industries_Technology >  0.50
+|   |--- category_Technology >  0.50
 |   |   |--- cpi_country <= 115.54
-|   |   |   |--- gdp_country <= 616957689856.00
+|   |   |   |--- log_gdp_country <= 27.14
 |   |   |   |   |--- class: True
-|   |   |   |--- gdp_country >  616957689856.00
-|   |   |   |   |--- age <= 69.50
-|   |   |   |   |   |--- class: False
-|   |   |   |   |--- age >  69.50
+|   |   |   |--- log_gdp_country >  27.14
+|   |   |   |   |--- age <= 47.50
 |   |   |   |   |   |--- class: True
+|   |   |   |   |--- age >  47.50
+|   |   |   |   |   |--- class: False
 |   |   |--- cpi_country >  115.54
-|   |   |   |--- finalWorth <= 4850.00
+|   |   |   |--- log_finalWorth <= 8.49
 |   |   |   |   |--- class: True
-|   |   |   |--- finalWorth >  4850.00
-|   |   |   |   |--- gross_tertiary_education_enrollment <= 46.85
-|   |   |   |   |   |--- class: False
-|   |   |   |   |--- gross_tertiary_education_enrollment >  46.85
+|   |   |   |--- log_finalWorth >  8.49
+|   |   |   |   |--- population_country <= 847328656.00
 |   |   |   |   |   |--- class: True
+|   |   |   |   |--- population_country >  847328656.00
+|   |   |   |   |   |--- class: False
 |--- population_country >  1382066368.00
 |   |--- age <= 35.50
 |   |   |--- class: False
 |   |--- age >  35.50
-|   |   |--- industries_Metals & Mining <= 0.50
-|   |   |   |--- finalWorth <= 1350.00
-|   |   |   |   |--- class: True
-|   |   |   |--- finalWorth >  1350.00
-|   |   |   |   |--- finalWorth <= 6050.00
+|   |   |--- age <= 71.50
+|   |   |   |--- age <= 55.50
+|   |   |   |   |--- category_Diversified <= 0.50
 |   |   |   |   |   |--- class: True
-|   |   |   |   |--- finalWorth >  6050.00
+|   |   |   |   |--- category_Diversified >  0.50
+|   |   |   |   |   |--- class: False
+|   |   |   |--- age >  55.50
+|   |   |   |   |--- industries_Food & Beverage <= 0.50
 |   |   |   |   |   |--- class: True
-|   |   |--- industries_Metals & Mining >  0.50
-|   |   |   |--- finalWorth <= 1200.00
-|   |   |   |   |--- class: False
-|   |   |   |--- finalWorth >  1200.00
-|   |   |   |   |--- age <= 63.50
+|   |   |   |   |--- industries_Food & Beverage >  0.50
 |   |   |   |   |   |--- class: True
-|   |   |   |   |--- age >  63.50
+|   |   |--- age >  71.50
+|   |   |   |--- category_Metals & Mining <= 0.50
+|   |   |   |   |--- age <= 76.50
+|   |   |   |   |   |--- class: True
+|   |   |   |   |--- age >  76.50
+|   |   |   |   |   |--- class: True
+|   |   |   |--- category_Metals & Mining >  0.50
+|   |   |   |   |--- age <= 76.00
+|   |   |   |   |   |--- class: True
+|   |   |   |   |--- age >  76.00
 |   |   |   |   |   |--- class: False

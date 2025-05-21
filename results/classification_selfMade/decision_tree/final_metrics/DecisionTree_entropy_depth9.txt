@@ -3,19 +3,19 @@ Criterion: entropy
 Max Depth: 9
 
 TRAIN METRICS:
-Accuracy: 0.7900
-Precision: 0.7817
-Recall: 0.9667
-F1-Score: 0.8644
+Accuracy: 0.7759
+Precision: 0.8062
+Recall: 0.8906
+F1-Score: 0.8463
 Confusion Matrix:
-[[ 251  389]
- [  48 1393]]
+[[ 290  270]
+ [ 138 1123]]
 
 TEST METRICS:
-Accuracy: 0.7274
-Precision: 0.7494
-Recall: 0.9114
-F1-Score: 0.8225
+Accuracy: 0.7145
+Precision: 0.7760
+Recall: 0.8262
+F1-Score: 0.8004
 Confusion Matrix:
-[[ 50 110]
- [ 32 329]]
+[[111 129]
+ [ 94 447]]
