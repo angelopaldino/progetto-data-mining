@@ -4,12 +4,15 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 from sklearn.preprocessing import StandardScaler
 import os
+import joblib
 
 # Caricamento dati
 X_train = pd.read_csv("data/splitted/X_train.csv")
 X_test = pd.read_csv("data/splitted/X_test.csv")
 y_train = pd.read_csv("data/splitted/y_train.csv").values.ravel()
 y_test = pd.read_csv("data/splitted/y_test.csv").values.ravel()
+model_path = "models/KNN_selfMade.joblib"
+
 
 
 print("Colonne con solo NaN:")
@@ -39,7 +42,7 @@ X_test_scaled = scaler.transform(X_test)
 
 
 # Parametri del modello
-k = 19
+k = 5
 model_name = f"knn_k{k}"
 
 # Addestramento modello KNN
@@ -121,64 +124,6 @@ os.makedirs(os.path.dirname(output_path), exist_ok=True)
 plt.savefig(output_path)
 plt.show()
 plt.close()
-
 print(f"✔ Grafico salvato in: {output_path}")
+joblib.dump(model, model_path)
 
-# CROSS VALIDATION
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import cross_val_score
-
-k_values = range(1, 21)
-cv_scores = []
-
-# Cross-validation su ogni k
-for k in k_values:
-    knn_pipeline = make_pipeline(StandardScaler(), KNeighborsClassifier(n_neighbors=k))
-    scores = cross_val_score(knn_pipeline, X_train, y_train, cv=5, scoring='accuracy')
-    cv_scores.append(scores.mean())
-
-# Plot
-plt.figure(figsize=(6, 4))
-plt.plot(k_values, cv_scores, marker='o')
-plt.xlabel("Valore di k")
-plt.ylabel("Accuratezza media (5-Fold CV)")
-plt.title("KNN - Accuratezza media tramite Cross-Validation")
-plt.grid(True)
-
-# Salvataggio
-output_path = "../results/classification_selfMade/KNN/cv_knn_accuracy.png"
-os.makedirs(os.path.dirname(output_path), exist_ok=True)
-plt.savefig(output_path)
-plt.show()
-plt.close()
-
-# Miglior k
-best_k = k_values[np.argmax(cv_scores)]
-print(f"✔ Miglior valore di k trovato con CV e concentrazione su accuracy: {best_k}")
-
-k_values = range(1, 21)
-cv_scores = []
-
-for k in k_values:
-    knn_pipeline = make_pipeline(StandardScaler(), KNeighborsClassifier(n_neighbors=k))
-    scores = cross_val_score(knn_pipeline, X_train, y_train, cv=5, scoring='f1')
-    cv_scores.append(scores.mean())
-
-# Plot
-plt.figure(figsize=(6, 4))
-plt.plot(k_values, cv_scores, marker='o')
-plt.xlabel("Valore di k")
-plt.ylabel("F1-Score media (5-Fold CV)")
-plt.title("KNN - f1-score media tramite Cross-Validation")
-plt.grid(True)
-
-# Salvataggio
-output_path = "../results/classification_selfMade/KNN/cv_knn_f1.png"
-os.makedirs(os.path.dirname(output_path), exist_ok=True)
-plt.savefig(output_path)
-plt.show()
-plt.close()
-
-# Miglior k
-best_k = k_values[np.argmax(cv_scores)]
-print(f"✔ Miglior valore di k trovato con CV e concentrazione su f1: {best_k}")
