@@ -8,6 +8,9 @@ from sklearn.metrics import (
     confusion_matrix,
     classification_report
 )
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.metrics import roc_curve, auc
 
 def evaluate_and_save_model(
     model,
@@ -151,3 +154,48 @@ def evaluate_and_save_model_multiclass(
 
         f.write(">>> CLASSIFICATION REPORT (TEST):\n")
         f.write(metrics["report"])
+
+
+
+
+def plot_roc_curve(model, X_test, y_test, model_name="Modello", save_dir=None):
+    """
+    Disegna e salva la curva ROC con il nome del modello.
+
+    Parameters:
+    - model: modello addestrato che supporta predict_proba()
+    - X_test: feature del test set
+    - y_test: etichette vere del test set
+    - model_name: nome del modello da usare nel grafico e nel nome file
+    - save_dir: directory in cui salvare l'immagine (facoltativa)
+
+    Ritorna:
+    - roc_auc: valore dell'AUC
+    """
+    
+
+    y_proba = model.predict_proba(X_test)[:, 1]
+    fpr, tpr, _ = roc_curve(y_test, y_proba)
+    roc_auc = auc(fpr, tpr)
+
+    plt.figure(figsize=(8, 6))
+    plt.plot(fpr, tpr, color='darkorange', lw=2,
+             label=f'ROC curve (AUC = {roc_auc:.2f})')
+    plt.plot([0, 1], [0, 1], color='navy', lw=2,
+             linestyle='--', label='baseline random')
+
+    plt.xlabel("False Positive Rate")
+    plt.ylabel("True Positive Rate")
+    plt.title(f"Curva ROC - {model_name}")
+    plt.legend(loc="lower right")
+    plt.grid(True)
+    plt.tight_layout()
+
+    
+    if save_dir:
+        file_name = f"roc_curve_{model_name.replace(' ', '_').lower()}.png"
+        full_path = os.path.join(save_dir, file_name)
+        plt.savefig(full_path)
+
+    plt.show()
+    return roc_auc
