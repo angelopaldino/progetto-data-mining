@@ -11,8 +11,8 @@ Il progetto è organizzato nelle seguenti cartelle:
 
 - `models/`: contiene i modelli salvati in formato joblib
 
-- `Notebooks/`: contiene i notebook Python suddivisi per modello. Ogni notebook è dedicato a un classificatore (Decision Tree, KNN, Random Forest, MLP, SVM...) applicato al problema binario o multiclasse.
-- `Scripts/`: contiene le funzioni ausiliarie comuni utilizzate nei notebook, come ad esempio la generazione automatica della curva ROC o il salvataggio delle metriche.
+- `Notebooks/`: contiene i notebook Python suddivisi per modello. Ogni notebook è dedicato a un classificatore (Decision Tree, KNN, Random Forest, MLP, SVM...) applicato al problema binario o multiclasse. I notebook non indicizzati, sono notebook di confronto che sono stati implementati per ultimo dopo avere ottenuto le metriche dai vari modelli al fine di fare un confronto tra i diversi modelli.
+- `Scripts/`: contiene le funzioni ausiliarie comuni utilizzate nei notebook.
 - `results/`: raccoglie i risultati ottenuti dai modelli, come metriche di performance e grafici ROC. I file sono divisi in due sottocartelle: una per la classificazione binaria (`classification_selfMade`) e una per quella multiclasse (`classification_category`).
 
 
@@ -27,7 +27,7 @@ Tutti i grafici ROC sono salvati come immagini `.png` e si trovano nella cartell
 Sono stati implementati i seguenti modelli per il problema binario (classificazione di `selfMade`):
 
 - Decision Tree
-- KNN (con k=5)
+- KNN 
 - naive bayes
 - MLP 
 - ripper
@@ -35,17 +35,15 @@ Sono stati implementati i seguenti modelli per il problema binario (classificazi
 
 Per il problema multiclasse (classificazione di `category`) sono stati testati:
 
-- decision tree
-- Random Forest (con macro-averaging)
-- KNN
+- Decision Tree
+- KNN 
 - naive bayes
-- balanced random forest
-- MLP
-- MLP dopo PCA
-- ripper 
-- svm 
-
-
+- MLP 
+- ensemble MLP
+- ripper
+- SVM 
+# Confronto modelli
+Sono stati testati diversi modelli e per ogni modello sono state utilizzate diverse combinazioni dei parametri ottenuti tramite la ricerca GridSearchCV. I risultati che ogni modello ci ha fornito sono stati salvati opportunamente per effettuare un confronto delle prestazioni
 
 ## Dove trovare i risultati
 
