@@ -24,9 +24,9 @@ def evaluate_and_save_model(
     """
     Calcola metriche su train e test set, salva il modello e scrive i risultati in un file.
     
-    Parameters:
+    Parametri:
     - model: modello sklearn addestrato
-    - model_name: nome descrittivo del modello (es. "Bagging KNN")
+    - model_name: nome descrittivo del modello
     - y_train, y_pred_train: valori reali e predetti sul training set
     - y_test, y_pred_test: valori reali e predetti sul test set
     - output_dir: directory dove salvare il file delle metriche
@@ -162,8 +162,8 @@ def plot_roc_curve(model, X_test, y_test, model_name="Modello", save_dir=None):
     """
     Disegna e salva la curva ROC con il nome del modello.
 
-    Parameters:
-    - model: modello addestrato che supporta predict_proba()
+    Parametri:
+    - model: modello addestrato 
     - X_test: feature del test set
     - y_test: etichette vere del test set
     - model_name: nome del modello da usare nel grafico e nel nome file
