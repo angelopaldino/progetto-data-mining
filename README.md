@@ -7,18 +7,9 @@ Questo progetto analizza un dataset contenente statistiche sui miliardari nel mo
 ```
 DataMiningProject/
 ├── data/
-│   └── processed/
-│       └── billionaires_clean.csv
 ├── scripts/
-│   └── 02_eda_report.py
 ├── results/
-│   └── eda/
-│       ├── age_distribution.png
-│       ├── finalworth_distribution.png
-│       ├── correlation_matrix.png
-│       └── summary.txt
 ├── notebooks/
-│   └── 02_eda_explorativa.ipynb
 ├── .venv/
 └── README.md
 ```
@@ -27,7 +18,9 @@ DataMiningProject/
 
 * Caricamento e pulizia dei dati
 * Analisi esplorativa e generazione di grafici descrittivi
-* Esportazione di grafici e report testuali in una cartella dedicata (`results/eda`)
+* Esportazione di grafici e report testuali in una cartella dedicata (`results/`)
+* Vengono testati diversi modelli tra cui: decision tree, svm, knn calcolando le prestazioni(accuracy, f1 score, precision recall) e matrice di confusione di ciascun modello al variare dei parametri, anche ottenuti tramite ricerca GridSearchCV. Infine viene fatto un confronto tra i modelli.
+* Questo progetto esplora problemi di classificazione binaria e multiclasse rispettivamente usando selfMade come target per la classificazione binaria e category per la classificazione multiclasse
 
 ## Come eseguire il progetto
 
@@ -54,18 +47,14 @@ source .venv/bin/activate
 pip install pandas numpy matplotlib seaborn
 ```
 
-### 4. Esegui lo script di analisi
-
-```bash
-python scripts/02_eda_report.py
-```
 
 ## Output generato
 
-Tutti i risultati sono salvati in `results/eda/`:
+Tutti i risultati sono salvati in `results/`:
 
-* 📊 Grafici: distribuzioni di età e patrimonio, matrice di correlazione
-* 📄 Riepilogo testuale: info sul dataset e statistiche descrittive
+*  Grafici: distribuzioni di età e patrimonio, matrice di correlazione
+*  Riepilogo testuale: info sul dataset e statistiche descrittive
+*  Confronto tra modelli con le metriche ottenute
 
 ## Dataset
 
