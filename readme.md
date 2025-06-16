@@ -21,9 +21,11 @@ Sono stati sviluppati vari modelli di classificazione, testando più algoritmi s
 I modelli sono stati confrontati utilizzando metriche standard (accuracy, f1 score, precision e recall) ed è stata calcolata anche la matrice di confusione; e per i problemi binari è stata calcolata anche la curva ROC. È stata valutata l'eventuale presenza di overfitting tramite analisi train/test
 
 6. Deployment
-I modelli e i risultati ottenuti sono stati organizzati e documentati all'interno del progetto. Tutti i modelli sono stati salvati in formato .joblib, mentre i risultati e le visualizzazioni sono disponibili nella cartella ../results/. Il progetto include un'applicazione interattiva con Streamlit che consente di utilizzare i modelli di classificazione direttamente da interfaccia web. L'utente può:
+I modelli e i risultati ottenuti sono stati organizzati e documentati all'interno del progetto. Tutti i modelli sono stati salvati in formato .joblib, mentre i risultati e le visualizzazioni sono disponibili nella cartella ../results/.
+Il progetto include un'applicazione interattiva con Streamlit che consente di utilizzare i modelli di classificazione direttamente da interfaccia web. L'utente può:
 - scegliere il tipo di classificazione
 - selezionare il modello desiderato
+- caricare dati esistenti (.csv)
 - effettuare una valutazione
 - inserire manualmente un nuovo dato, personalizzando ogni attributo, per ottenere una predizione in tempo reale
 L'interfaccia può essere avviata con : streamlit run Scripts/app.py
