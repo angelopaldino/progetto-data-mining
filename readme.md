@@ -3,6 +3,32 @@
 
 Questo progetto è stato realizzato per l’esame del corso di Data Mining. L’obiettivo principale è classificare la variabile binaria `selfMade` e la variabile multiclasse `category` all’interno di un dataset relativo ai miliardari.
 
+## Fasi del progetto CRISP-DM
+
+1. Comprensione del dominio applicativo
+Sono stati definiti gli obiettivi del progetto, identificando i task principali: prevedere se un individuo è self made e classificare la variabile category, che rappresenta una suddivisione in 18 categorie generali riferite al tipo di attività o area di influenza del soggetto.
+
+2. Comprensione dei dati
+È stata condotta un'analisi esplorativa del dataset per comprenderne la struttura, identificare eventuali problemi(valori mancanti, outlier, classi sbilanciate)
+
+3. Preparazione dei dati
+Sono state svolte operazioni di pulizia, encoding, scaling, oversampling delle classi minoritarie e riduzione dimensionale PCA. I dati sono stati suddivisi in training set e test set e salvati in ../data/splitted
+
+4. Creazione dei modelli
+Sono stati sviluppati vari modelli di classificazione, testando più algoritmi su entrambi i target (selfMade e category). Per ogni modello sono state testate diverse combinazioni dei parametri, ed inoltre sono stati testati anche i parametri ottenuti tramite ricerca GridSearchCV
+
+5. Valutazione del modello e dei risultati
+I modelli sono stati confrontati utilizzando metriche standard (accuracy, f1 score, precision e recall) ed è stata calcolata anche la matrice di confusione; e per i problemi binari è stata calcolata anche la curva ROC. È stata valutata l'eventuale presenza di overfitting tramite analisi train/test
+
+6. Deployment
+I modelli e i risultati ottenuti sono stati organizzati e documentati all'interno del progetto. Tutti i modelli sono stati salvati in formato .joblib, mentre i risultati e le visualizzazioni sono disponibili nella cartella ../results/. Il progetto include un'applicazione interattiva con Streamlit che consente di utilizzare i modelli di classificazione direttamente da interfaccia web. L'utente può:
+- scegliere il tipo di classificazione
+- selezionare il modello desiderato
+- effettuare una valutazione
+- inserire manualmente un nuovo dato, personalizzando ogni attributo, per ottenere una predizione in tempo reale
+L'interfaccia può essere avviata con : streamlit run Scripts/app.py
+
+
 ## Struttura del progetto
 
 Il progetto è organizzato nelle seguenti cartelle:
@@ -42,6 +68,8 @@ Per il problema multiclasse (classificazione di `category`) sono stati testati:
 - ensemble MLP
 - ripper
 - SVM 
+
+
 # Confronto modelli
 Sono stati testati diversi modelli e per ogni modello sono state utilizzate diverse combinazioni dei parametri ottenuti tramite la ricerca GridSearchCV. I risultati che ogni modello ci ha fornito sono stati salvati opportunamente per effettuare un confronto delle prestazioni
 
