@@ -62,6 +62,17 @@ Tutti i risultati sono salvati in `results/`:
 * Dimensione: \~1MB
 * Colonne principali: `name`, `age`, `finalWorth`, `country`, `industry`, `gender`, `source`, `state`, ecc.
 
+
+## Deployment
+Questo progetto include un'applicazione interattiva sviluppata con Streamlit che permette di testare e utilizzare i modelli di classificazione.
+Funzionalità principali:
+  - Selezione del tipo di classificazione: binaria o multiclasse
+  - Scelta del modello da utilizzare
+  - Valutazione su dati etichettati caricati manualmente (.csv)
+  - Inserimento di nuovi dati personalizzati da parte dell'utente per ottenere una predizione
+Come avviare l'interfaccia:
+  - Assicurati di essere all'interno dell'ambiente virtuale .venv e poi esegui: streamlit run Scripts/app.py
+
 ## Autore
 
 Angelo Paldino — Università della calabria Unical, facoltà ingegneria informatica indirizzo intelligenza artificiale e machine learning, corso di Data Mining
