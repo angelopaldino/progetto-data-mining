@@ -3,7 +3,6 @@ import pandas as pd
 import joblib
 from sklearn.metrics import classification_report
 
-# === Mappatura modelli ===
 
 models_binari = {
     "Decision Tree": ("models/decision_tree_selfmade_final.joblib", None),
@@ -26,27 +25,21 @@ models_multiclasse = {
 
 
 
-# === Funzione per predizione ===
 def predict(model, df):
     return model.predict(df)
 
-# === Titolo ===
 st.title("Classificatore Data Mining - selfMade / category")
 
-# === Selezione tipo classificazione ===
 classification_type = st.selectbox("Tipo di classificazione", ["Binaria (selfMade)", "Multiclasse (category)"])
 
-# === Scelta del modello ===
 model_dict = models_binari if classification_type == "Binaria (selfMade)" else models_multiclasse
 model_name = st.selectbox("Seleziona il modello", list(model_dict.keys()))
 model_path, scaler_path = model_dict[model_name]
 model = joblib.load(model_path)
 scaler = joblib.load(scaler_path) if scaler_path else None
 
-# === Selezione modalità ===
 mode = st.radio("Modalità", ["Valutazione su dati noti (test)", "Predizione su nuovo dato"])
 
-# === Colonne codificate ===
 if classification_type == "Binaria (selfMade)":
     input_columns = pd.read_csv("data/splitted/X_train.csv").columns.tolist()
     target_col = "selfMade"
@@ -55,7 +48,8 @@ else:
     input_columns = pd.read_csv("data/splitted_category/X_train.csv").columns.tolist()
     target_col = "category"
 
-# === Modalità Test ===
+# modalità di caricamento di dati esistenti
+
 if mode == "Valutazione su dati noti (test)":
     uploaded_file = st.file_uploader("Carica un file CSV contenente i dati codificati e la colonna target corretta")
     if uploaded_file is not None:
@@ -77,7 +71,7 @@ if mode == "Valutazione su dati noti (test)":
             st.subheader("Anteprima con confronto predizione-vero")
             st.dataframe(df[[*input_columns, target_col, "Predizione"]])
 
-# === Modalità Nuovo Dato ===
+ # modalità nuovo dato che può inserire l'utente
 else:
     st.subheader("Inserisci un nuovo dato da classificare")
     input_data = {col: 0.0 for col in input_columns}
