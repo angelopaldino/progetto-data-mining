@@ -73,7 +73,7 @@ Per il problema multiclasse (classificazione di `category`) sono stati testati:
 
 
 # Confronto modelli
-Sono stati testati diversi modelli e per ogni modello sono state utilizzate diverse combinazioni dei parametri ottenuti tramite la ricerca GridSearchCV. I risultati che ogni modello ci ha fornito sono stati salvati opportunamente per effettuare un confronto delle prestazioni
+Sono stati testati diversi modelli e per ogni modello sono state utilizzate diverse combinazioni dei parametri ottenuti tramite la ricerca GridSearchCV. I risultati che ogni modello ci ha fornito sono stati salvati opportunamente per effettuare un confronto delle prestazioni. Il confronto tra modelli può visualizzarsi dentro i notebook rispettivi, oppure nella cartella ../results/classification_selfMade/confronto per classificazione binaria, mentre per classificazione multiclasse potete trovarli dentro la cartella ../results/classification_category/confronto
 
 ## Dove trovare i risultati
 
