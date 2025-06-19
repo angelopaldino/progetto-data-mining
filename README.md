@@ -7,6 +7,7 @@ Questo progetto analizza un dataset contenente statistiche sui miliardari nel mo
 ```
 DataMiningProject/
 ├── data/
+|-- models/
 ├── scripts/
 ├── results/
 ├── notebooks/
